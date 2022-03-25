@@ -141,7 +141,7 @@ p {
   border-left: 4px solid var(--cor-primaria);
 }
 .rodape {
-  background: white;
+  background: var(--fundo-2);
   width: 100%;
   text-align: center;
   padding: 2.5rem;
