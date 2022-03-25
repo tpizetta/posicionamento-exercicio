@@ -1,11 +1,30 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escura: #900;
+  --fundo-1: #f7f7f7;
+  --fundo-2: #ffffff;
+  --texto: #000000;
+  --subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url(img/onda-clara.svg);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-1: #111111;
+    --fundo-2: #000000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.2);
+    --onda-escura: url(img/onda-escura.svg);
+  }
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
-  background-color: #f7f7f7;
+  background-color: var(--fundo-1);
   display: grid;
   gap: 60px;
   justify-items: center;
   margin-top: 60px;
+  color: var(--texto);
 }
 img {
   max-width: 100%;
@@ -43,14 +62,14 @@ p {
 }
 .menu a {
   display: block;
-  background: white;
+  background: var(--fundo-2);
   padding: 1rem 2rem;
   border-radius: 4px;
-  color: black;
-  border: 2px solid #fff;
+  color: var(--texto);
+  border: 2px solid var(--fundo-2);
 }
 .menu a:hover {
-  border: 2px solid #e21;
+  border: 2px solid var(--cor-primaria);
 }
 .conteudo {
   display: grid;
@@ -58,7 +77,7 @@ p {
   max-width: 1000px;
 }
 .introducao {
-  background: white;
+  background: var(--fundo-2);
   padding: 40px;
   text-align: right;
   position: relative;
@@ -74,7 +93,7 @@ p {
   content: "";
   width: 60px;
   height: 4px;
-  background: #e21;
+  background: var(--cor-primaria);
   position: absolute;
   top: 30px;
   right: -30px;
@@ -84,25 +103,25 @@ p {
   height: 100%;
 }
 .botao {
-  background: #e21;
-  color: white;
+  background: var(--cor-primaria);
+  color: #ffffff;
   padding: 1rem 2rem;
   border-radius: 4px;
 }
 .botao:hover {
-  background: #900;
+  background: var(--cor-primaria-escura);
 }
 .subtitulo {
-  background-image: url(img/onda.svg);
+  background-image: var(--onda);
   font-size: 4rem;
-  color: rgba(0, 0, 0, 0.2);
+  color: var(--subtitulo);
   text-align: right;
   padding: 2.5rem;
   align-self: center;
   /* word-break: break-all; */
 }
 .vantagens {
-  background: white;
+  background: var(--fundo-2);
   padding: 2.5rem;
 }
 .vantagens-item {
@@ -116,10 +135,10 @@ p {
   grid-column: 2;
 }
 .vantagens-item:nth-child(odd) {
-  background: #f7f7f7;
+  background: var(--fundo-1);
 }
 .vantagens-item:hover {
-  border-left: 4px solid #e21;
+  border-left: 4px solid var(--cor-primaria);
 }
 .rodape {
   background: white;
